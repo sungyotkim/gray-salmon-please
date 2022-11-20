@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./NavBar.css";
 import { SiGmail, SiGithub, SiLinkedin, SiAngellist } from "react-icons/si";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -17,10 +17,7 @@ export const NavBar: React.FC<{}> = ({}) => {
   );
   const [showMobileDropdown, setShowMobileDropdown] = useState<boolean>(true);
   const [mobileView, setMobileView] = useState<boolean>(false);
-
-  const handleClick = () => {
-    setShowMobileDropdown(!showMobileDropdown);
-  };
+  const divRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleWindowResize() {
@@ -28,8 +25,10 @@ export const NavBar: React.FC<{}> = ({}) => {
     }
 
     window.addEventListener("resize", handleWindowResize);
+    document.addEventListener("mousedown", clickOutside);
 
     return () => {
+      document.removeEventListener("mousedown", clickOutside);
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
@@ -49,6 +48,25 @@ export const NavBar: React.FC<{}> = ({}) => {
     };
   }, [windowSize]);
 
+  const handleClick = () => {
+    if (showMobileDropdown) {
+      setShowMobileDropdown(false);
+    } else {
+      setShowMobileDropdown(true);
+    }
+  };
+
+  function clickOutside(e: any) {
+    if (!mobileView) return;
+
+    if (divRef.current) {
+      if (divRef.current.contains(e.target)) {
+        return;
+      }
+    }
+    setShowMobileDropdown(false);
+  }
+
   return (
     <div className="nav-wrapper">
       <div className="nav-container">
@@ -58,7 +76,7 @@ export const NavBar: React.FC<{}> = ({}) => {
             <GiHamburgerMenu />
           </div>
           {showMobileDropdown && (
-            <div className="nav-links">
+            <div className="nav-links" ref={divRef}>
               <div
                 onClick={() =>
                   (window.location.href = "mailto:sungyotkim@gmail.com")
