@@ -32,3 +32,28 @@
   height: 30px;
   cursor: pointer;
 }
+
+.nav-link > img {
+  width: 30px;
+  height: 30px;
+}
+
+.mobile-burger-menu {
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .mobile-nav-link-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .mobile-burger-menu {
+    display: inline;
+  }
+}
