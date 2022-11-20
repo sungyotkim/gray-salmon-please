@@ -16,6 +16,7 @@ export const NavBar: React.FC<{}> = ({}) => {
     getWindowSize()
   );
   const [showMobileDropdown, setShowMobileDropdown] = useState<boolean>(true);
+  const [mobileView, setMobileView] = useState<boolean>(false);
 
   const handleClick = () => {
     setShowMobileDropdown(!showMobileDropdown);
@@ -36,9 +37,16 @@ export const NavBar: React.FC<{}> = ({}) => {
   useEffect(() => {
     if (windowSize > 500) {
       setShowMobileDropdown(true);
+      setMobileView(false);
     } else {
       setShowMobileDropdown(false);
+      setMobileView(true);
     }
+
+    return () => {
+      setShowMobileDropdown(true);
+      setMobileView(false);
+    };
   }, [windowSize]);
 
   return (
@@ -58,6 +66,7 @@ export const NavBar: React.FC<{}> = ({}) => {
                 className="nav-link"
               >
                 <SiGmail />
+                {mobileView && <div className="mobile-menu-text">Email me</div>}
               </div>
               <a
                 href="https://github.com/sungyotkim"
@@ -66,6 +75,7 @@ export const NavBar: React.FC<{}> = ({}) => {
                 className="nav-link"
               >
                 <SiGithub />
+                {mobileView && <div className="mobile-menu-text">Github</div>}
               </a>
               <a
                 href="https://www.linkedin.com/in/sungyotkim/"
@@ -74,6 +84,7 @@ export const NavBar: React.FC<{}> = ({}) => {
                 className="nav-link"
               >
                 <SiLinkedin />
+                {mobileView && <div className="mobile-menu-text">LinkedIn</div>}
               </a>
               <a
                 href="https://angel.co/u/sungyo-tommy-kim"
@@ -82,6 +93,9 @@ export const NavBar: React.FC<{}> = ({}) => {
                 className="nav-link"
               >
                 <SiAngellist />
+                {mobileView && (
+                  <div className="mobile-menu-text">AngelList</div>
+                )}
               </a>
               <a
                 href="https://tommykim.me"
@@ -90,6 +104,9 @@ export const NavBar: React.FC<{}> = ({}) => {
                 className="nav-link"
               >
                 <img src={websiteLogo} alt="portfolio" />
+                {mobileView && (
+                  <div className="mobile-menu-text">Portfolio Site</div>
+                )}
               </a>
             </div>
           )}
