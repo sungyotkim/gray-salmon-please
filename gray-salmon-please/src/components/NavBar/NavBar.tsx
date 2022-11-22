@@ -18,6 +18,7 @@ export const NavBar: React.FC<{}> = ({}) => {
   const [showMobileDropdown, setShowMobileDropdown] = useState<boolean>(true);
   const [mobileView, setMobileView] = useState<boolean>(false);
   const divRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleWindowResize() {
@@ -59,9 +60,13 @@ export const NavBar: React.FC<{}> = ({}) => {
   function clickOutside(e: any) {
     if (!mobileView) return;
 
-    if (divRef.current) {
+    if (divRef.current && dropdownRef.current) {
       if (divRef.current.contains(e.target)) {
         return;
+      } else if (dropdownRef.current.contains(e.target)) {
+        return;
+      } else {
+        setShowMobileDropdown(false);
       }
     }
     setShowMobileDropdown(false);
@@ -72,7 +77,11 @@ export const NavBar: React.FC<{}> = ({}) => {
       <div className="nav-container">
         <div className="nav-name-container">Gray Salmon Please!</div>
         <div className="mobile-nav-link-wrapper">
-          <div className="mobile-burger-menu" onClick={handleClick}>
+          <div
+            className="mobile-burger-menu"
+            onClick={handleClick}
+            ref={dropdownRef}
+          >
             <GiHamburgerMenu />
           </div>
           {showMobileDropdown && (

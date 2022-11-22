@@ -14,7 +14,7 @@
   height: 40px;
   /* width: 1400px; */
   /* margin: 0 auto; */
-  width: min(100% - 2rem, 1400px);
+  width: min(100vw - 2rem, 1400px);
   margin-inline: auto;
   display: flex;
   justify-content: space-between;
