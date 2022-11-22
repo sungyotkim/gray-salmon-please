@@ -9,7 +9,6 @@
 }
 
 .nav-container {
-  background-color: gray;
   padding: 24px 0;
   height: 40px;
   /* width: 1400px; */
@@ -43,6 +42,10 @@
 .nav-link > img {
   width: 30px;
   height: 30px;
+}
+
+.nav-link > img:hover {
+  opacity: 0.7;
 }
 
 .mobile-burger-menu {

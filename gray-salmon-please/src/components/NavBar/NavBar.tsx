@@ -1,53 +1,35 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./NavBar.css";
 import { SiGmail, SiGithub, SiLinkedin, SiAngellist } from "react-icons/si";
 import { GiHamburgerMenu } from "react-icons/gi";
 import websiteLogo from "../../assets/website-logo-tommy.png";
-
-// interface NavBarProps {}
-
-const getWindowSize = () => {
-  const { innerWidth } = window;
-  return innerWidth;
-};
+import { WindowSizeContext } from "../../context/WindowSizeContext";
 
 export const NavBar: React.FC<{}> = ({}) => {
-  const [windowSize, setWindowSize] = useState<number | (() => number)>(
-    getWindowSize()
-  );
+  const { windowWidth, mobileView } = useContext(WindowSizeContext);
   const [showMobileDropdown, setShowMobileDropdown] = useState<boolean>(true);
-  const [mobileView, setMobileView] = useState<boolean>(false);
   const divRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    function handleWindowResize() {
-      setWindowSize(getWindowSize());
-    }
-
-    window.addEventListener("resize", handleWindowResize);
     document.addEventListener("mousedown", clickOutside);
 
     return () => {
       document.removeEventListener("mousedown", clickOutside);
-      window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
 
   useEffect(() => {
-    if (windowSize > 500) {
+    if (windowWidth > 500) {
       setShowMobileDropdown(true);
-      setMobileView(false);
     } else {
       setShowMobileDropdown(false);
-      setMobileView(true);
     }
 
     return () => {
       setShowMobileDropdown(true);
-      setMobileView(false);
     };
-  }, [windowSize]);
+  }, [windowWidth]);
 
   const handleClick = () => {
     if (showMobileDropdown) {
