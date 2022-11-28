@@ -37,6 +37,7 @@
   height: 30px;
   cursor: pointer;
   color: #646cff;
+  color: var(--navy-color);
 }
 
 .nav-link > img {
@@ -46,6 +47,10 @@
 
 .nav-link > img:hover {
   opacity: 0.7;
+}
+
+.nav-link:hover {
+  color: var(--rum-color);
 }
 
 .mobile-burger-menu {
@@ -73,9 +78,9 @@
     top: 40px;
     flex-direction: column;
     width: 150px;
-    height: 200px;
+    height: 190px;
     padding: 5px;
-    background-color: white;
+    background-color: var(--porcelain-color);
     border-radius: 4px;
   }
 
@@ -88,7 +93,7 @@
   }
 
   .nav-link:hover {
-    background-color: gray;
+    background-color: var(--navy-color);
   }
 
   .mobile-menu-text {
