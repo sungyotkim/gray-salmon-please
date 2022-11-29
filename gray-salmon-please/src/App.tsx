@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { NavBar } from "./components/NavBar/NavBar";
 import { WindowSizeContext } from "./context/WindowSizeContext";
 import { getWindowWidth } from "./utils/findWindowSize";
+import { MainContentBody } from "./components/MainContentBody/MainContentBody";
 
 function App() {
   const { windowWidth, setWindowWidth, setMobileView } =
@@ -34,6 +35,7 @@ function App() {
   return (
     <>
       <NavBar />
+      <MainContentBody />
     </>
   );
 }

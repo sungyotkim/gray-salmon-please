@@ -104,7 +104,7 @@
 
   @media (prefers-color-scheme: light) {
     .nav-links {
-      background-color: #242424;
+      background-color: var(--gray-color);
     }
 
     .mobile-menu-text {
