@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { NavBar } from "./components/NavBar/NavBar";
 import { WindowSizeContext } from "./context/WindowSizeContext";
+import { DarkModeContext } from "./context/DarkModeContext";
 import { getWindowWidth } from "./utils/findWindowSize";
 import { MainContentBody } from "./components/MainContentBody/MainContentBody";
 
