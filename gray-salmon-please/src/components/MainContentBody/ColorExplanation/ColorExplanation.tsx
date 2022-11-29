@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ColorExplanation.css";
 
 interface ColorExplanationProps {}
 
 export const ColorExplanation: React.FC<ColorExplanationProps> = ({}) => {
+  const [hovered, setHovered] = useState<boolean>(false);
+
+  const handleMouseOver = () => {
+    setHovered(true);
+  };
+
+  const handleMouseOut = () => {
+    setHovered(false);
+  };
+
   return (
     <>
       <div className="color-explanation-container">
@@ -14,8 +24,21 @@ export const ColorExplanation: React.FC<ColorExplanationProps> = ({}) => {
           <p>
             Wild salmon, due to their diet of{" "}
             <span className="salmon-text">astaxanthin</span>-containing{" "}
-            <span className="color-explanation-text-hover underline-text">
+            <span
+              className="color-explanation-text-hover underline-text"
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+            >
               krill and shrimp
+              {hovered && (
+                <div className="hovered-text-body">
+                  Fun fact:
+                  <br />A flamingo's high{" "}
+                  <span className="salmon-text">shrimp</span> diet is also what
+                  contributes to the its{" "}
+                  <span className="salmon-text">pink color</span>!
+                </div>
+              )}
             </span>
             , achieve the <span className="salmon-text">orange-pink</span> hue
             naturally.

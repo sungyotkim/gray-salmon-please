@@ -11,8 +11,23 @@
 
 .color-explanation-text-hover {
   cursor: pointer;
+  position: relative;
+  color: var(--rum-color);
 }
 
 .color-explanation-text-hover:hover {
   color: var(--salmon-color);
+}
+
+.hovered-text-body {
+  width: 230px;
+  color: var(--gray-color);
+  height: 88px;
+  position: absolute;
+  background-color: var(--porcelain-color);
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  padding: 5px;
+  bottom: 18px;
+  left: 50%;
 }
