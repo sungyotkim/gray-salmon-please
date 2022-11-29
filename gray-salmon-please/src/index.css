@@ -3,10 +3,6 @@
   font-size: 18px;
   font-weight: 400;
 
-  color-scheme: light dark;
-  /* color: rgba(255, 255, 255, 0.87); */
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -81,8 +77,28 @@ p {
   text-decoration: underline;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     background-color: #ffffff;
   }
+} */
+
+.background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -10;
+  background-color: #ffffff;
+}
+
+.background-dark {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -10;
+  background-color: #242424;
 }

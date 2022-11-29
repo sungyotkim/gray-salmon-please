@@ -4,12 +4,14 @@ import { SiGmail, SiGithub, SiLinkedin, SiAngellist } from "react-icons/si";
 import { GiHamburgerMenu } from "react-icons/gi";
 import websiteLogo from "../../assets/website-logo-tommy.png";
 import { WindowSizeContext } from "../../context/WindowSizeContext";
+import { DarkModeContext } from "../../context/DarkModeContext";
 
 export const NavBar: React.FC<{}> = ({}) => {
   const { windowWidth, mobileView } = useContext(WindowSizeContext);
   const [showMobileDropdown, setShowMobileDropdown] = useState<boolean>(true);
   const divRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const { darkMode } = useContext(DarkModeContext);
 
   useEffect(() => {
     document.addEventListener("mousedown", clickOutside);
@@ -55,7 +57,7 @@ export const NavBar: React.FC<{}> = ({}) => {
   }
 
   return (
-    <div className="nav-wrapper">
+    <div className={darkMode ? "nav-wrapper nav-wrapper-dark" : "nav-wrapper"}>
       <div className="nav-container">
         <div className="nav-name-container">Gray Salmon Please!</div>
         <div className="mobile-nav-link-wrapper">

@@ -8,11 +8,16 @@ import { MainContentBody } from "./components/MainContentBody/MainContentBody";
 function App() {
   const { windowWidth, setWindowWidth, setMobileView } =
     useContext(WindowSizeContext);
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   useEffect(() => {
     function handleWindowResize() {
       setWindowWidth(getWindowWidth());
     }
+
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? setDarkMode(true)
+      : setDarkMode(false);
 
     window.addEventListener("resize", handleWindowResize);
 
@@ -33,8 +38,14 @@ function App() {
     };
   }, [windowWidth]);
 
+  const toggle = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
     <>
+      <div className={darkMode ? "background-dark" : "background"}></div>
+      <button onClick={toggle}>darkmode</button>
       <NavBar />
       <MainContentBody />
     </>

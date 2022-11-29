@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import { createContext, useState } from "react";
 import { getWindowWidth } from "../utils/findWindowSize";
 

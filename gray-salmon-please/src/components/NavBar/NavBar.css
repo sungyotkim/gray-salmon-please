@@ -6,6 +6,10 @@
   position: sticky;
   top: 0;
   left: 0;
+  background-color: #ffffff;
+}
+
+.nav-wrapper-dark {
   background-color: #242424;
 }
 
@@ -101,19 +105,5 @@
     color: black;
     font-size: 18px;
     font-weight: 500;
-  }
-
-  @media (prefers-color-scheme: light) {
-    .nav-wrapper {
-      background-color: #ffffff;
-    }
-
-    .nav-links {
-      background-color: var(--gray-color);
-    }
-
-    .mobile-menu-text {
-      color: white;
-    }
   }
 }
