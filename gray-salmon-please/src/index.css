@@ -67,6 +67,10 @@ p {
   color: var(--salmon-color);
 }
 
+.rum-text {
+  color: var(--rum-color);
+}
+
 .bold-text {
   font-weight: bold;
 }

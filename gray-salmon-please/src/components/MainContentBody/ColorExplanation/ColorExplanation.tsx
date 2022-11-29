@@ -62,8 +62,14 @@ export const ColorExplanation: React.FC<ColorExplanationProps> = ({}) => {
             These pigmenting supplements are the{" "}
             <span className="salmon-text">most expensive</span> component of the
             farmed salmon's diet, consisting of{" "}
-            <span className="salmon-text bold-text">up to 20%</span> of feed
-            costs!
+            <a
+              className="rum-text underline-text"
+              href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0019032"
+              target={"_blank"}
+            >
+              up to 20% of feed costs
+            </a>
+            !
           </p>
         </div>
       </div>
