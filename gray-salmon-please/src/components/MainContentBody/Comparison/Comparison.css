@@ -11,22 +11,36 @@
 .comparison-table {
   display: flex;
   gap: 10px;
-  width: 50%;
+  width: 672px;
   min-width: 452px;
+  justify-content: space-between;
 }
 
 .comparison-left-container {
-  width: 47.5%;
   padding: 3px 0;
 }
 
 .comparison-divider {
-  width: 5%;
+  width: 2%;
   border-left: 3px solid var(--gray-color);
   box-sizing: border-box;
 }
 
 .comparison-right-container {
-  width: 47.5%;
   padding: 3px 0;
+}
+
+@media only screen and (max-width: 950px) {
+  .comparison-table {
+    width: 50%;
+    justify-content: center;
+  }
+
+  .comparison-left-container {
+    width: 47.5%;
+  }
+
+  .comparison-right-container {
+    width: 47.5%;
+  }
 }

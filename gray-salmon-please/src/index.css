@@ -43,6 +43,7 @@ h2 {
   padding: 0;
   margin-bottom: 10px;
   font-weight: inherit;
+  color: var(--navy-color);
 }
 
 h3 {
@@ -51,6 +52,7 @@ h3 {
   padding: 0;
   margin-bottom: 10px;
   font-weight: inherit;
+  color: var(--navy-color);
 }
 
 p {
