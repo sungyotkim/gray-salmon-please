@@ -1,7 +1,6 @@
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 18px;
-  /* line-height: 24px; */
   font-weight: 400;
 
   color-scheme: light dark;
@@ -29,30 +28,34 @@ a {
   color: var(--navy-color);
   text-decoration: inherit;
 }
+
 a:hover {
   color: var(--rum-color);
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   /* min-height: 100vh; */
   position: relative;
   font-family: "Roboto", sans-serif;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h2 {
+  font-size: 60px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  font-weight: inherit;
+  text-align: start;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: var(--gray-color);
-    background-color: #ffffff;
-  }
+p {
+  font-size: 18px;
+  margin: 0;
+  font-weight: inherit;
+  display: inherit;
+  padding: 0 5px;
 }
 
 .salmon-text {
@@ -69,4 +72,10 @@ h1 {
 
 .underline-text {
   text-decoration: underline;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: #ffffff;
+  }
 }
