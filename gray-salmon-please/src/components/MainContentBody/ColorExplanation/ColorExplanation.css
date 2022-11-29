@@ -1,0 +1,18 @@
+.color-explanation-container {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.color-explanation-container > h2 {
+  text-align: center;
+}
+
+.color-explanation-text-hover {
+  cursor: pointer;
+}
+
+.color-explanation-text-hover:hover {
+  color: var(--salmon-color);
+}
