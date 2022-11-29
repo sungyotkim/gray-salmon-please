@@ -3,6 +3,7 @@ import "./MainContentBody.css";
 import { Introduction } from "./Introduction/Introduction";
 import { Comparison } from "./Comparison/Comparison";
 import { ColorExplanation } from "./ColorExplanation/ColorExplanation";
+import { WhyAddColorExplanation } from "./WhyAddColorExplanation/WhyAddColorExplanation";
 
 interface MainContentBodyProps {}
 
@@ -13,6 +14,7 @@ export const MainContentBody: React.FC<MainContentBodyProps> = ({}) => {
         <Introduction />
         <Comparison />
         <ColorExplanation />
+        <WhyAddColorExplanation />
       </div>
     </>
   );

@@ -1,0 +1,23 @@
+.why-add-color-explanation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin-inline: auto;
+  margin-top: 48px;
+}
+
+.why-add-color-explanation-container > h2 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.why-add-color-explanation-main-text {
+  width: 96%;
+  margin-bottom: 12px;
+}
+
+.why-add-color-explanation-salmofan-text {
+  margin-bottom: 12px;
+  text-align: center;
+}

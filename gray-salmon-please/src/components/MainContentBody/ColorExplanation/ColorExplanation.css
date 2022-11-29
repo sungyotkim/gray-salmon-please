@@ -12,7 +12,7 @@
 }
 
 .color-explanation-text-hover {
-  cursor: pointer;
+  cursor: help;
   position: relative;
   color: var(--rum-color);
 }
