@@ -1,7 +1,7 @@
 .introduction-container {
   width: min(100% - 2rem, 1400px);
   margin-inline: auto;
-  margin-top: 20px;
+  margin-top: 24px;
   display: flex;
   justify-content: center;
   gap: 20px;

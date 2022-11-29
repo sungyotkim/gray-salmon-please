@@ -4,7 +4,7 @@
   align-items: center;
   max-width: 900px;
   margin-inline: auto;
-  margin-top: 24px;
+  margin-top: 48px;
 }
 
 .color-explanation-container > h2 {
@@ -32,4 +32,8 @@
   padding: 5px;
   bottom: 18px;
   left: 50%;
+}
+
+.color-explanation-paragraph {
+  padding: 0 5px;
 }

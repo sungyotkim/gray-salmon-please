@@ -21,7 +21,7 @@ export const ColorExplanation: React.FC<ColorExplanationProps> = ({}) => {
           What causes their <span className="salmon-text">color</span>?
         </h2>
         <div>
-          <p>
+          <div className="color-explanation-paragraph">
             Wild salmon, due to their diet of{" "}
             <span className="salmon-text">astaxanthin</span>-containing{" "}
             <span
@@ -42,7 +42,7 @@ export const ColorExplanation: React.FC<ColorExplanationProps> = ({}) => {
             </span>
             , achieve the <span className="salmon-text">orange-pink</span> hue
             naturally.
-          </p>
+          </div>
           <br />
           <p>
             Farmed salmon, on the other hand, are naturally{" "}
