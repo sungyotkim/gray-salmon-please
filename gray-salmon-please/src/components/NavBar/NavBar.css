@@ -6,6 +6,7 @@
   position: sticky;
   top: 0;
   left: 0;
+  background-color: #242424;
 }
 
 .nav-container {
@@ -103,6 +104,10 @@
   }
 
   @media (prefers-color-scheme: light) {
+    .nav-wrapper {
+      background-color: #ffffff;
+    }
+
     .nav-links {
       background-color: var(--gray-color);
     }

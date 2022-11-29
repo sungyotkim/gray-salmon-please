@@ -47,7 +47,14 @@ h2 {
   padding: 0;
   margin-bottom: 10px;
   font-weight: inherit;
-  text-align: start;
+}
+
+h3 {
+  font-size: 40px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  font-weight: inherit;
 }
 
 p {

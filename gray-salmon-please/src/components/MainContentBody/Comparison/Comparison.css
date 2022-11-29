@@ -1,0 +1,32 @@
+.comparison-container {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.comparison-table {
+  display: flex;
+  gap: 10px;
+  width: 50%;
+  min-width: 452px;
+}
+
+.comparison-left-container {
+  width: 47.5%;
+  padding: 3px 0;
+}
+
+.comparison-divider {
+  width: 5%;
+  border-left: 3px solid var(--gray-color);
+  box-sizing: border-box;
+}
+
+.comparison-right-container {
+  width: 47.5%;
+  padding: 3px 0;
+}
