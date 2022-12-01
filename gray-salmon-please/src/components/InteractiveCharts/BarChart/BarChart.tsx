@@ -13,6 +13,7 @@ import "./BarChart.css";
 import { DarkModeContext } from "../../../context/DarkModeContext";
 import { dataBeforeInfo, dataAfterInfo } from "../../../utils/chartData";
 import { WindowSizeContext } from "../../../context/WindowSizeContext";
+import { E } from "chart.js/dist/chunks/helpers.core";
 
 ChartJS.register(
   CategoryScale,
@@ -29,9 +30,13 @@ const labels = dataBeforeInfo.map((row) => row.color);
 
 export const BarChart: React.FC<BarChartProps> = ({}) => {
   const { darkMode } = useContext(DarkModeContext);
-  const [gridLineColor, setGridLineColor] = useState("rgba(70,70,70,0.75)");
-  const [gridColor, setGridColor] = useState("#000000");
+  const [gridLineColor, setGridLineColor] = useState<string>(
+    "rgba(70,70,70,0.75)"
+  );
+  const [gridColor, setGridColor] = useState<string>("#000000");
   const { windowWidth } = useContext(WindowSizeContext);
+  const [titleFontSize, setTitleFontSize] = useState<number>(20);
+  const [axisFontSize, setAxisFontSize] = useState<number>(16);
 
   useEffect(() => {
     if (darkMode) {
@@ -48,7 +53,20 @@ export const BarChart: React.FC<BarChartProps> = ({}) => {
     };
   }, [darkMode]);
 
-  useEffect(() => {}, [windowWidth]);
+  useEffect(() => {
+    if (windowWidth < 600) {
+      setTitleFontSize(16);
+      setAxisFontSize(12);
+    } else {
+      setTitleFontSize(20);
+      setAxisFontSize(16);
+    }
+
+    return () => {
+      setTitleFontSize(20);
+      setAxisFontSize(16);
+    };
+  }, [windowWidth]);
 
   const options = {
     responsive: true,
@@ -63,7 +81,7 @@ export const BarChart: React.FC<BarChartProps> = ({}) => {
         display: true,
         text: "Consumer's Willingness To Pay Per kg of Salmon",
         font: {
-          size: 20,
+          size: titleFontSize,
           weight: "600",
           family: "Inter, Avenir, Helvetica, Arial, sans-serif",
         },
@@ -78,7 +96,7 @@ export const BarChart: React.FC<BarChartProps> = ({}) => {
           display: true,
           text: "$USD per kg",
           font: {
-            size: 16,
+            size: axisFontSize,
             weight: "600",
             family: "Inter, Avenir, Helvetica, Arial, sans-serif",
           },
@@ -96,7 +114,7 @@ export const BarChart: React.FC<BarChartProps> = ({}) => {
           display: true,
           text: "Salmon Color",
           font: {
-            size: 16,
+            size: axisFontSize,
             weight: "600",
             family: "Inter, Avenir, Helvetica, Arial, sans-serif",
           },
