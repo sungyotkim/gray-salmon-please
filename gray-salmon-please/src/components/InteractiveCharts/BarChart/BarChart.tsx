@@ -41,43 +41,34 @@ const dataAfterInfo = [
 
 const labels = dataBeforeInfo.map((row) => row.color);
 
-// export const data = {
-//   labels,
-//   datasets: [
-//     {
-//       label: "Before Information",
-//       data: dataBeforeInfo.map((row) => row.usd),
-//       backgroundColor: ["#f9a28d", "#f2917b", "#f38166", "#f46b4c", "#f2562e"],
-//     },
-//     {
-//       label: "After Information",
-//       data: dataAfterInfo.map((row) => row.usd),
-//       backgroundColor: ["#f9a28d", "#f2917b", "#f38166", "#f46b4c", "#f2562e"],
-//     },
-//   ],
-// };
-
 export const BarChart: React.FC<BarChartProps> = ({}) => {
   const { darkMode } = useContext(DarkModeContext);
-  const [gridLineColor, setGridLineColor] = useState("#000000");
+  const [gridLineColor, setGridLineColor] = useState("rgba(70,70,70,0.75)");
+  const [gridColor, setGridColor] = useState("#000000");
 
   useEffect(() => {
     if (darkMode) {
-      setGridLineColor("#F0EAD6");
+      setGridLineColor("rgba(196, 196, 196, 0.45");
+      setGridColor("#F0EAD6");
     } else {
-      setGridLineColor("#000000");
+      setGridLineColor("rgba(70,70,70,0.35)");
+      setGridColor("#000000");
     }
 
     return () => {
-      setGridLineColor("#000000");
+      setGridLineColor("rgba(70,70,70,0.35)");
+      setGridColor("#000000");
     };
   }, [darkMode]);
 
   const options = {
     responsive: true,
+    layout: {
+      padding: 5,
+    },
     plugins: {
       legend: {
-        position: "right" as const,
+        position: "top" as const,
       },
       title: {
         display: true,
@@ -87,10 +78,10 @@ export const BarChart: React.FC<BarChartProps> = ({}) => {
           weight: "600",
           family: "Inter, Avenir, Helvetica, Arial, sans-serif",
         },
-        color: gridLineColor,
+        color: gridColor,
       },
     },
-    color: gridLineColor,
+    color: gridColor,
     scales: {
       y: {
         beginAtZero: true,
@@ -102,13 +93,13 @@ export const BarChart: React.FC<BarChartProps> = ({}) => {
             weight: "600",
             family: "Inter, Avenir, Helvetica, Arial, sans-serif",
           },
-          color: gridLineColor,
+          color: gridColor,
         },
         grid: {
           color: gridLineColor,
         },
         ticks: {
-          color: gridLineColor,
+          color: gridColor,
         },
       },
       x: {
@@ -120,13 +111,13 @@ export const BarChart: React.FC<BarChartProps> = ({}) => {
             weight: "600",
             family: "Inter, Avenir, Helvetica, Arial, sans-serif",
           },
-          color: gridLineColor,
+          color: gridColor,
         },
         grid: {
           color: gridLineColor,
         },
         ticks: {
-          color: gridLineColor,
+          color: gridColor,
         },
       },
     },
@@ -145,7 +136,7 @@ export const BarChart: React.FC<BarChartProps> = ({}) => {
           "#f46b4c",
           "#f2562e",
         ],
-        color: gridLineColor,
+        color: gridColor,
       },
       {
         label: "After Information",
@@ -157,7 +148,9 @@ export const BarChart: React.FC<BarChartProps> = ({}) => {
           "#f46b4c",
           "#f2562e",
         ],
-        color: gridLineColor,
+        color: gridColor,
+        borderColor: gridColor,
+        borderWidth: 1.5,
       },
     ],
   };
