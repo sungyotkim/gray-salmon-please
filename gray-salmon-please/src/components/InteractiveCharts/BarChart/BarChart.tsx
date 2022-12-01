@@ -11,6 +11,8 @@ import {
 import { Bar } from "react-chartjs-2";
 import "./BarChart.css";
 import { DarkModeContext } from "../../../context/DarkModeContext";
+import { dataBeforeInfo, dataAfterInfo } from "../../../utils/chartData";
+import { WindowSizeContext } from "../../../context/WindowSizeContext";
 
 ChartJS.register(
   CategoryScale,
@@ -23,28 +25,13 @@ ChartJS.register(
 
 interface BarChartProps {}
 
-const dataBeforeInfo = [
-  { color: "R21", usd: 7.66 },
-  { color: "R23", usd: 27.85 },
-  { color: "R25", usd: 30.41 },
-  { color: "R27", usd: 29.66 },
-  { color: "R29", usd: 34.87 },
-];
-
-const dataAfterInfo = [
-  { color: "R21", usd: 8.57 },
-  { color: "R23", usd: 25.0 },
-  { color: "R25", usd: 30.65 },
-  { color: "R27", usd: 36.95 },
-  { color: "R29", usd: 28.46 },
-];
-
 const labels = dataBeforeInfo.map((row) => row.color);
 
 export const BarChart: React.FC<BarChartProps> = ({}) => {
   const { darkMode } = useContext(DarkModeContext);
   const [gridLineColor, setGridLineColor] = useState("rgba(70,70,70,0.75)");
   const [gridColor, setGridColor] = useState("#000000");
+  const { windowWidth } = useContext(WindowSizeContext);
 
   useEffect(() => {
     if (darkMode) {
@@ -60,6 +47,8 @@ export const BarChart: React.FC<BarChartProps> = ({}) => {
       setGridColor("#000000");
     };
   }, [darkMode]);
+
+  useEffect(() => {}, [windowWidth]);
 
   const options = {
     responsive: true,

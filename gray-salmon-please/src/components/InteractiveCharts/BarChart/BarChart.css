@@ -1,0 +1,9 @@
+.chart-wrapper {
+  width: 95vw;
+  height: calc(95vw / 2);
+  min-height: 237px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
