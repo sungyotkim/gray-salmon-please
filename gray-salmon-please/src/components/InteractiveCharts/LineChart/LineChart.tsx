@@ -37,6 +37,16 @@ export const options = {
   scales: {
     y: {
       beginAtZero: true,
+      title: {
+        display: true,
+        text: "$USD per Kg",
+      },
+    },
+    x: {
+      title: {
+        display: true,
+        text: "Salmon Color",
+      },
     },
   },
 };
