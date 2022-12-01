@@ -76,6 +76,12 @@ export const BarChart: React.FC<BarChartProps> = ({}) => {
     plugins: {
       legend: {
         position: "top" as const,
+        onHover: function () {
+          document.body.style.cursor = "pointer";
+        },
+        onLeave: function () {
+          document.body.style.cursor = "unset";
+        },
       },
       title: {
         display: true,
