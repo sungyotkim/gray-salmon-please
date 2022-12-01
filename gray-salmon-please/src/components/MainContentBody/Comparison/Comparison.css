@@ -34,6 +34,7 @@
   .comparison-table {
     width: 50%;
     justify-content: center;
+    margin: 0 auto;
   }
 
   .comparison-left-container {

@@ -17,6 +17,7 @@
   --salmon-color: #fa8072;
 
   color: var(--gray-color);
+  margin: 0;
 }
 
 a {
@@ -29,10 +30,17 @@ a:hover {
   color: var(--rum-color);
 }
 
+* {
+  margin: 0;
+}
+
 body {
   margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   min-width: 320px;
-  /* min-height: 100vh; */
   position: relative;
   font-family: "Roboto", sans-serif;
 }
@@ -107,4 +115,8 @@ p {
   right: 0;
   z-index: -10;
   background-color: #242424;
+}
+
+.container {
+  width: 100%;
 }

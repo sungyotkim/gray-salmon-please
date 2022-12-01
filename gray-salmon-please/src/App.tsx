@@ -45,11 +45,13 @@ function App() {
 
   return (
     <>
-      <div className={darkMode ? "background-dark" : "background"}></div>
-      <button onClick={toggle}>darkmode</button>
-      <NavBar />
-      <MainContentBody />
-      <InteractiveCharts />
+      <div className="container">
+        <div className={darkMode ? "background-dark" : "background"}></div>
+        <button onClick={toggle}>darkmode</button>
+        <NavBar />
+        <MainContentBody />
+        <InteractiveCharts />
+      </div>
     </>
   );
 }
