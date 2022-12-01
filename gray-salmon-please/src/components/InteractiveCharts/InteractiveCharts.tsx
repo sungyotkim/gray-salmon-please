@@ -1,6 +1,6 @@
 import React from "react";
 import "./InteractiveCharts.css";
-import { LineChart } from "./LineChart/LineChart";
+import { BarChart } from "./BarChart/BarChart";
 
 interface InteractiveChartsProps {}
 
@@ -9,7 +9,7 @@ export const InteractiveCharts: React.FC<InteractiveChartsProps> = ({}) => {
     <>
       {/* <div id="acquisitions"></div> */}
       <div className="charts-container">
-        <LineChart />
+        <BarChart />
       </div>
     </>
   );

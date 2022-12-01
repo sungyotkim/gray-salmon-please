@@ -3,25 +3,24 @@ import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend,
 } from "chart.js";
-import { Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
+import "./BarChart.css";
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend
 );
 
-interface LineChartProps {}
+interface BarChartProps {}
 
 export const options = {
   responsive: true,
@@ -31,7 +30,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Line Chart test",
+      text: "Consumer's Willingness To Pay Per kg of Salmon",
     },
   },
   scales: {
@@ -39,7 +38,7 @@ export const options = {
       beginAtZero: true,
       title: {
         display: true,
-        text: "$USD per Kg",
+        text: "$USD per kg",
       },
     },
     x: {
@@ -75,19 +74,22 @@ export const data = {
     {
       label: "Before Information",
       data: dataBeforeInfo.map((row) => row.usd),
+      backgroundColor: ["#f9a28d", "#f2917b", "#f38166", "#f46b4c", "#f2562e"],
     },
     {
       label: "After Information",
       data: dataAfterInfo.map((row) => row.usd),
+      // backgroundColor: ["#ee967a", "#f58672", "#f1755a", "#f16047", "#f3492d"],
+      backgroundColor: ["#f9a28d", "#f2917b", "#f38166", "#f46b4c", "#f2562e"],
     },
   ],
 };
 
-export const LineChart: React.FC<LineChartProps> = ({}) => {
+export const BarChart: React.FC<BarChartProps> = ({}) => {
   return (
     <>
       <div className="chart-wrapper">
-        <Line options={options} data={data} />
+        <Bar options={options} data={data} />
       </div>
     </>
   );
