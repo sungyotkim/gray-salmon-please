@@ -13,7 +13,6 @@ import "./BarChart.css";
 import { DarkModeContext } from "../../../context/DarkModeContext";
 import { dataBeforeInfo, dataAfterInfo } from "../../../utils/chartData";
 import { WindowSizeContext } from "../../../context/WindowSizeContext";
-import { E } from "chart.js/dist/chunks/helpers.core";
 
 ChartJS.register(
   CategoryScale,
@@ -85,7 +84,7 @@ export const BarChart: React.FC<BarChartProps> = ({}) => {
       },
       title: {
         display: true,
-        text: "Consumer's Willingness To Pay Per kg of Salmon",
+        text: "Consumers' Willingness To Pay Per kg of Salmon",
         font: {
           size: titleFontSize,
           weight: "600",
