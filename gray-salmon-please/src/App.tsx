@@ -5,6 +5,7 @@ import { DarkModeContext } from "./context/DarkModeContext";
 import { getWindowWidth } from "./utils/findWindowSize";
 import { MainContentBody } from "./components/MainContentBody/MainContentBody";
 import { InteractiveCharts } from "./components/InteractiveCharts/InteractiveCharts";
+import { InteractiveSlider } from "./components/InteractiveSlider/InteractiveSlider";
 
 function App() {
   const { windowWidth, setWindowWidth, setMobileView } =
@@ -51,6 +52,7 @@ function App() {
         <NavBar />
         <MainContentBody />
         <InteractiveCharts />
+        <InteractiveSlider />
       </div>
     </>
   );
