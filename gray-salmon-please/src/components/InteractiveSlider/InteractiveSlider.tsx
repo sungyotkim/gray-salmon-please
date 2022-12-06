@@ -8,7 +8,7 @@ import { SliderTable } from "./SliderTable/SliderTable";
 interface InteractiveSliderProps {}
 
 export const InteractiveSlider: React.FC<InteractiveSliderProps> = ({}) => {
-  const [sliderColor, setSliderColor] = useState<string>("ecb092");
+  const [sliderColor, setSliderColor] = useState<string>("#ecb092");
   const [sliderCost, setSliderCost] = useState<number>(20);
 
   return (
@@ -16,8 +16,13 @@ export const InteractiveSlider: React.FC<InteractiveSliderProps> = ({}) => {
       <SliderDescription />
       <div className="interactive-slider-container">
         <div className="interactive-slider-left">
-          <SliderImage />
-          <SliderComponent />
+          <SliderImage sliderColor={sliderColor} />
+          <SliderComponent
+            sliderColor={sliderColor}
+            setSliderColor={setSliderColor}
+            sliderCost={sliderCost}
+            setSliderCost={setSliderCost}
+          />
         </div>
         <div className="interactive-slider-right">
           <SliderTable />
