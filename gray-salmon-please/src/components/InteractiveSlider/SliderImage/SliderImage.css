@@ -1,7 +1,6 @@
 .slider-image {
   width: 100%;
   max-width: 655px;
-  background-color: blue;
   height: calc(54vw * 400px / 655px);
   max-height: 400px;
   position: relative;

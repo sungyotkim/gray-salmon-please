@@ -56,7 +56,14 @@ export const SliderComponent: React.FC<SliderComponentProps> = ({
           id="myRange"
           name="slider"
         />
-        <label htmlFor="slider">Salmon Color Score</label>
+        <label
+          htmlFor="slider"
+          className={
+            darkMode ? "slider-label slider-label-dark" : "slider-label"
+          }
+        >
+          Salmon Color Score
+        </label>
         <div className="slider-value" style={{ left: sliderDistance }}>
           {sliderCost}
         </div>
