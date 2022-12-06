@@ -11,7 +11,11 @@ import {
 import { Bar } from "react-chartjs-2";
 import "./BarChart.css";
 import { DarkModeContext } from "../../../context/DarkModeContext";
-import { dataBeforeInfo, dataAfterInfo } from "../../../utils/chartData";
+import {
+  dataBeforeInfo,
+  dataAfterInfo,
+  barColors,
+} from "../../../utils/chartData";
 import { WindowSizeContext } from "../../../context/WindowSizeContext";
 
 ChartJS.register(
@@ -141,25 +145,13 @@ export const BarChart: React.FC<BarChartProps> = ({}) => {
       {
         label: "Before Information",
         data: dataBeforeInfo.map((row) => row.usd),
-        backgroundColor: [
-          "#f9a28d",
-          "#f2917b",
-          "#f38166",
-          "#f46b4c",
-          "#f2562e",
-        ],
+        backgroundColor: barColors,
         color: gridColor,
       },
       {
         label: "After Information",
         data: dataAfterInfo.map((row) => row.usd),
-        backgroundColor: [
-          "#f9a28d",
-          "#f2917b",
-          "#f38166",
-          "#f46b4c",
-          "#f2562e",
-        ],
+        backgroundColor: barColors,
         color: gridColor,
         borderColor: gridColor,
         borderWidth: 1.5,

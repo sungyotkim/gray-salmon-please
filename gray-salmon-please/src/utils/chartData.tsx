@@ -13,3 +13,11 @@ export const dataAfterInfo = [
   { color: "R27", usd: 36.95 },
   { color: "R29", usd: 28.46 },
 ];
+
+export const barColors = [
+  "#f9a28d",
+  "#f2917b",
+  "#f38166",
+  "#f46b4c",
+  "#f2562e",
+];

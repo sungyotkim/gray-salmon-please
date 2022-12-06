@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./InteractiveSlider.css";
 import { SliderDescription } from "./SliderDescription/SliderDescription";
 import { SliderImage } from "./SliderImage/SliderImage";
@@ -8,6 +8,9 @@ import { SliderTable } from "./SliderTable/SliderTable";
 interface InteractiveSliderProps {}
 
 export const InteractiveSlider: React.FC<InteractiveSliderProps> = ({}) => {
+  const [sliderColor, setSliderColor] = useState<string>("ecb092");
+  const [sliderCost, setSliderCost] = useState<number>(20);
+
   return (
     <>
       <SliderDescription />

@@ -14,7 +14,6 @@ export const SliderImage: React.FC<SliderImageProps> = ({}) => {
           version="1.1"
           x="0px"
           y="0px"
-          // enable-background="new 0 0 1000 1000"
           viewBox="10.01 200.87 980 598.26"
           id="slider-fillet-color"
         >
