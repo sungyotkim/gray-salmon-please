@@ -16,8 +16,8 @@ export const ClosingBody: React.FC<ClosingBodyProps> = ({}) => {
           </p>
           <br />
           <p>
-            Regarding farmed salmon, the{" "}
-            <span className="salmon-text">astaxanthin</span> additive{" "}
+            Regarding farmed salmon, the
+            <span className="salmon-text"> astaxanthin</span> additive{" "}
             <span className="bold-text">does not </span>
             contribute to flavor differences. In other words, aesthetics is the
             main difference in price, all other things (species, size, weight)
