@@ -16,11 +16,7 @@
 .nav-container {
   padding: 24px 24px 0;
   height: 40px;
-  /* width: 1400px; */
-  /* margin: 0 auto; */
-  /* width: min(100% - 2rem, 1400px); */
   width: calc(100% - 48px);
-  /* box-sizing: border-box; */
   margin-inline: auto;
   display: flex;
   justify-content: space-between;
@@ -85,7 +81,7 @@
     top: 40px;
     flex-direction: column;
     width: 150px;
-    height: 190px;
+    height: 230px;
     padding: 5px;
     background-color: var(--porcelain-color);
     border-radius: 4px;

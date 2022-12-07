@@ -41,15 +41,10 @@ function App() {
     };
   }, [windowWidth]);
 
-  const toggle = () => {
-    setDarkMode(!darkMode);
-  };
-
   return (
     <>
       <div className="container">
         <div className={darkMode ? "background-dark" : "background"}></div>
-        <button onClick={toggle}>darkmode</button>
         <NavBar />
         <MainContentBody />
         <InteractiveCharts />

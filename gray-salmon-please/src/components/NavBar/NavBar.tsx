@@ -1,17 +1,18 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import "./NavBar.css";
 import { SiGmail, SiGithub, SiLinkedin, SiAngellist } from "react-icons/si";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { GiHamburgerMenu, GiMoon } from "react-icons/gi";
 import websiteLogo from "../../assets/website-logo-tommy.png";
 import { WindowSizeContext } from "../../context/WindowSizeContext";
 import { DarkModeContext } from "../../context/DarkModeContext";
+import { ImSun } from "react-icons/im";
 
 export const NavBar: React.FC<{}> = ({}) => {
   const { windowWidth, mobileView } = useContext(WindowSizeContext);
   const [showMobileDropdown, setShowMobileDropdown] = useState<boolean>(true);
   const divRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const { darkMode } = useContext(DarkModeContext);
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   useEffect(() => {
     document.addEventListener("mousedown", clickOutside);
@@ -55,6 +56,10 @@ export const NavBar: React.FC<{}> = ({}) => {
     }
     setShowMobileDropdown(false);
   }
+
+  const toggle = () => {
+    setDarkMode(!darkMode);
+  };
 
   return (
     <div className={darkMode ? "nav-wrapper nav-wrapper-dark" : "nav-wrapper"}>
@@ -119,6 +124,15 @@ export const NavBar: React.FC<{}> = ({}) => {
                   <div className="mobile-menu-text">Portfolio Site</div>
                 )}
               </a>
+              <div className="dark-mode-toggle nav-link" onClick={toggle}>
+                {!darkMode && <GiMoon />}
+                {darkMode && <ImSun />}
+                {mobileView && (
+                  <div className="mobile-menu-text">
+                    {darkMode ? "Light mode" : "Dark mode"}
+                  </div>
+                )}
+              </div>
             </div>
           )}
         </div>
