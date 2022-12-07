@@ -1,7 +1,12 @@
 .slider-table-wrapper {
   width: 100%;
   background-color: yellow;
-  /* height: 100%; */
   height: calc((54vw * 400) / 655);
-  /* max-height: 400px; */
+  max-height: 467px;
+}
+
+@media only screen and (max-width: 1416px) {
+  .slider-table-wrapper {
+    height: calc(((54vw * 400) / 655) + 67px);
+  }
 }
