@@ -8,15 +8,11 @@
 
 .interactive-slider-left {
   width: 60%;
-  height: 500px;
-  height: calc(((54vw * 400) / 655));
   max-width: 655px;
 }
 
 .interactive-slider-right {
   width: 40%;
-  height: 500px;
-  height: calc((54vw * 400) / 655);
 }
 
 .interactive-slider-title {
@@ -30,14 +26,4 @@
 
 .interactive-slider-title-light {
   color: black;
-}
-
-@media only screen and (max-width: 1416px) {
-  .interactive-slider-left {
-    height: calc(((54vw * 400) / 655) + 67px);
-  }
-
-  .interactive-slider-right {
-    height: calc(((54vw * 400) / 655) + 67px);
-  }
 }
