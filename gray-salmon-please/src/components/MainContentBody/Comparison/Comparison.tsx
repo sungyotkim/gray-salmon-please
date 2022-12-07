@@ -11,6 +11,7 @@ export const Comparison: React.FC<ComparisonProps> = ({}) => {
         <h3>What's the difference?</h3>
         <div className="comparison-table">
           <div className="comparison-left-container">
+            <b>Farmed Salmon</b>
             <li>Generally lower price</li>
             <li>Available year round</li>
             <li>Longer shelf life</li>
@@ -19,6 +20,7 @@ export const Comparison: React.FC<ComparisonProps> = ({}) => {
           </div>
           <div className="comparison-divider"></div>
           <div className="comparison-right-container">
+            <b>Wild Salmon</b>
             <li>Generally higher price</li>
             <li>Available seasonally (spring and summer)</li>
             <li>Shorter shelf life</li>
