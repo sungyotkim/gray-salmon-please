@@ -9,8 +9,8 @@ import { DarkModeContext } from "../../context/DarkModeContext";
 interface InteractiveSliderProps {}
 
 export const InteractiveSlider: React.FC<InteractiveSliderProps> = ({}) => {
-  const [sliderColor, setSliderColor] = useState<string>("#ecb092");
-  const [sliderCost, setSliderCost] = useState<number>(20);
+  const [sliderColor, setSliderColor] = useState<string>("#dc2325");
+  const [sliderCost, setSliderCost] = useState<number>(34);
   const { darkMode } = useContext(DarkModeContext);
 
   return (

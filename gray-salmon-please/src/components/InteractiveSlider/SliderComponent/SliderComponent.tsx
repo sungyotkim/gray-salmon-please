@@ -17,7 +17,9 @@ export const SliderComponent: React.FC<SliderComponentProps> = ({
   setSliderCost,
 }) => {
   const { darkMode } = useContext(DarkModeContext);
-  const [sliderDistance, setSliderDistance] = useState<string>("2px");
+  const [sliderDistance, setSliderDistance] = useState<string>(
+    "calc(100% - 23.5px)"
+  );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();

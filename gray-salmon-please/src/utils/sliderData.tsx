@@ -16,10 +16,6 @@ export const sliderColors = [
   "#dc2325",
 ];
 
-export const sliderValues = [
-  20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
-];
-
 export const sliderCosts = [
   5.23, 5.5, 5.99, 6.29, 6.5, 6.78, 6.99, 7.84, 9.56, 9.99, 10.99, 12.49, 16.99,
   17.89, 19.99,
