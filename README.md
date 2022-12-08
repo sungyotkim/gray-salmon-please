@@ -54,7 +54,7 @@ const [sliderDistance, setSliderDistance] = useState<string>(
 
 To create a responsive nav bar that changes to a hamburger menu for smaller screens, window size context was made to track the current window's size.
 useState variables were needed to check both the window's width and whether mobile view should be engaged or not along with setter variables to change them as needed.
-```
+```javascript
 interface ContextState {
   windowWidth: number | (() => number);
   setWindowWidth: React.Dispatch<React.SetStateAction<number | (() => number)>>;
